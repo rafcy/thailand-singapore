@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southeast Asia Travel Guidebook</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .guidebook {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .cover {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 40px;
+            position: relative;
+        }
+        
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .cover p {
+            font-size: 1.3em;
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .city-section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+        
+        .city-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 30px;
+            margin: -20px -20px 30px -20px;
+            border-radius: 10px;
+        }
+        
+        .city-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .category {
+            margin-bottom: 35px;
+        }
+        
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .attraction {
+            display: flex;
+            margin-bottom: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .attraction-image {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .attraction-content {
+            padding: 20px;
+            flex: 1;
+        }
+        
+        .attraction-name {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .attraction-notes {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .attraction-address {
+            font-size: 0.9em;
+            color: #777;
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .guidebook {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .city-section {
+                page-break-before: always;
+            }
+            .city-section:first-child {
+                page-break-before: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guidebook">
+        <!-- Cover Page -->
+        <div class="cover">
+            <h1>Southeast Asia</h1>
+            <p>Your Ultimate Travel Guide to Singapore, Bangkok, Chiang Mai & Phuket</p>
+        </div>
+        
+        <div class="content">
+            <!-- Singapore Section -->
+            <div class="city-section">
+                <div class="city-header">
+                    <h2 class="city-title">Singapore</h2>
+                </div>
+                
+                    <h3 class="category-title">🏛️ Iconic Sights</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrqVMLP0awesuizBb2heBf6zyXyLGIEZiJzcKJGcGKKbel-t1TLE14fsi-o7KVBUybYRb1mzI7KT0CelxcehSMMO33ek3qc6riINCRLMISkjDrcC6mU0WinZL-DK1r8Fs0xome3=s1360-w1360-h1020-rw" alt="Gardens by the Bay" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Gardens by the Bay (Cloud Forest, Flower Dome, Supertree Grove)</div>
+                            <div class="attraction-notes">"Garden Rhapsody" light show at night</div>
+                            <div class="attraction-address">18 Marina Gardens Dr, Singapore 018953</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://resources.thomascook.in/images/holidays/sightSeeing/MarinabaySand850.jpg" alt="Marina Bay Sands" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Marina Bay Sands SkyPark</div>
+                            <div class="attraction-notes">Best at sunset, skyline views</div>
+                            <div class="attraction-address">10 Bayfront Ave, Singapore 018956</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://cdn.getyourguide.com/image/format=auto,fit=contain,gravity=auto,quality=60,width=1440,height=650,dpr=1/tour_img/5b4315c448a1a.jpeg" alt="ArtScience Museum" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">ArtScience Museum</div>
+                            <div class="attraction-notes">Lotus-shaped architecture, interactive exhibits</div>
+                            <div class="attraction-address">6 Bayfront Ave, Singapore 018974</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Singapore_River_Stamford_Raffles_Statue.jpg" alt="Raffles Statue" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Statue of Sir Stamford Raffles</div>
+                            <div class="attraction-notes">Historical founder monument</div>
+                            <div class="attraction-address">North Bank, Singapore 179555</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🎢 Adventure & Fun</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npVOvpOh3eCj1Dj1Jx9z6tWI1_zIV9Y0tbgThl91QL735EsqMvBbra0EsyLe7G8xWGxH0jwaJ-JkZ3ZEF_n6vP5fW-kv17p5hWJXOLA8vftFhCE20_EXfx2_p3BRvqmlqA2XADN=s1360-w1360-h1020-rw" alt="Universal Studios Singapore" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Universal Studios Singapore</div>
+                            <div class="attraction-notes">Full-day theme park</div>
+                            <div class="attraction-address">8 Sentosa Gateway, Singapore 098269</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://www.sentosa.com.sg/-/media/sentosa/hero-asset/attractions/mega-adventure-park/megaadventure_hero.jpg?revision=9f8f5c2e-119b-47d8-9d19-ec48ecc5db5d" alt="Mega Adventure Park" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Mega Adventure Park (Sentosa)</div>
+                            <div class="attraction-notes">Zipline & adventure park</div>
+                            <div class="attraction-address">10A Siloso Beach Walk, Singapore 099008</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nokiw0qGJA5oX92h-7Rpl_00MOkeuTLgrMCbbAUkZbe997k-LL-MJylAuaTMQgay8V1VZPwo5DYMKrFoxgaAFPRGBpTeQLr1A7G9Y8NSlSjOfr5L18SNX1yAKZowVumgPLVxyDt=s1360-w1360-h1020-rw" alt="SkyHelix Sentosa" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">SkyHelix Sentosa</div>
+                            <div class="attraction-notes">Open-air gondola ride with drinks at sunset</div>
+                            <div class="attraction-address">41 Imbiah Rd, Sentosa, Singapore 099707</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://danamic-media.danamic.org/danamic-production/2018/05/13090209/BN-FA-5.jpg.webp" alt="Forest Adventure" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Forest Adventure</div>
+                            <div class="attraction-notes">Outdoor zipline & obstacle park over water</div>
+                            <div class="attraction-address">Bedok Reservoir Park, Singapore</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🏮 Culture</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4np31O-Co0RJhtlUd2xv53G2Y5eyY-VMBckraYhyY38Tcxwn_b5ifQwuouva5LDnYHGUvyGci84ucKf9xZoRmF-nN653C8piXWsGk1OJ2mz3JMSNP1W2rFWnz8yY8_iY4EvzA1pKFw=w594-h343-n-k-no" alt="Chinatown Singapore" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Chinatown</div>
+                            <div class="attraction-notes">Buddha Tooth Relic Temple, street markets</div>
+                            <div class="attraction-address">Pagoda St area</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSuThQ4p7ajbH1LjB9RCwT7Yxf1_nn8zs5kBT3VjhbE98clPw5L_OxRTl0cv4no-Aa7IentX71kACHks3SfL8-jSJonhdLm5d8jWKmtqg" alt="Little India Singapore" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Little India</div>
+                            <div class="attraction-notes">Sri Veeramakaliamman Temple, colorful streets</div>
+                            <div class="attraction-address">Serangoon Rd</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRRZub8eExDyZNz0T-dEQ_S9tKCRoyFT6nEAD-bK8O-y7IZkciZeEs0FJrb0YDTTCWgVrdxo0giPrfP7DRZKGcAGIWF0v8X8JwMpI2Bjg" alt="Kampong Glam" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Kampong Glam</div>
+                            <div class="attraction-notes">Sultan Mosque, Arab Street</div>
+                            <div class="attraction-address">Arab Street area</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🍜 Food</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/12/53/26/lau-pa-sat.jpg?w=900&h=-1&s=1" alt="Hawker Center" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Maxwell Food Centre, Lau Pa Sat</div>
+                            <div class="attraction-notes">Famous hawker centers</div>
+                            <div class="attraction-address">1 Kadayanallur St; 18 Raffles Quay</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bangkok Section -->
+            <div class="city-section">
+                <div class="city-header">
+                    <h2 class="city-title">Bangkok</h2>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🏯 Temples & History</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://cdn.getyourguide.com/image/format=auto,fit=contain,gravity=auto,quality=60,width=1440,height=650,dpr=1/tour_img/fcf83fa642bdc0abe65dac1a2671b2fdefdbbcb957a64678e03f8c8d12fb37dc.png" alt="Grand Palace Bangkok" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Grand Palace & Wat Phra Kaew</div>
+                            <div class="attraction-notes">Emerald Buddha</div>
+                            <div class="attraction-address">Na Phra Lan Rd</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrrzp8iaJLfj-zvbd51O3B93Wq9gaVZJcPm1yfnrypShEMd9hA0Wxw70E5UaBajdznxsoMTHQBQ96YOd1ahmdkwM3RJ09jD4Z6ZJIfXlIcvlLKBRbdhLWzjH22xUbQOyhh4_j2S-Q=s1360-w1360-h1020-rw" alt="Wat Pho Bangkok" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Wat Pho</div>
+                            <div class="attraction-notes">Reclining Buddha + Thai massage nearby</div>
+                            <div class="attraction-address">2 Sanamchai Rd</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://static.wixstatic.com/media/2cc94a_07e55de318fe41538e17cb9de596cb45~mv2.jpg/v1/fill/w_2500,h_1406,al_c/2cc94a_07e55de318fe41538e17cb9de596cb45~mv2.jpg" alt="Wat Arun Bangkok" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Wat Arun</div>
+                            <div class="attraction-notes">Temple of Dawn, stunning sunset spot</div>
+                            <div class="attraction-address">158 Thanon Wang Doem</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🎭 Culture & Fun</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Main_House_of_Jim_Thompson_photo_D_Ramey_Logan.jpg" alt="Jim Thompson House" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Jim Thompson House</div>
+                            <div class="attraction-notes">Silk museum, traditional architecture</div>
+                            <div class="attraction-address">6 Kasem San 2 Alley</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/4c/84/c5/caption.jpg?w=1200&h=-1&s=1" alt="Bangkok Canal Tour" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Khlong Boat Tour</div>
+                            <div class="attraction-notes">Explore canals</div>
+                            <div class="attraction-address">Various piers</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://cdn.evolve-mma.com/wp-content/uploads/2022/02/The-Complete-Muay-Thai-Beginners-Guide.jpg" alt="Muay Thai" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Muay Thai Class or Show</div>
+                            <div class="attraction-notes">Try a class or watch a fight</div>
+                            <div class="attraction-address">Various gyms</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🎢 Adventure</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/b8/f6/74/caption.jpg?w=1200&h=-1&s=1" alt="Bangkok ATV" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Bangkok ATV Adventures</div>
+                            <div class="attraction-notes">Offroad adventure</div>
+                            <div class="attraction-address">Phu Yai Samruai Alley, Rat Burana, Bangkok</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Jungle Zipline" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Jungle Zipline (Flight of the Gibbon)</div>
+                            <div class="attraction-notes">Full-day zipline trip</div>
+                            <div class="attraction-address">Bang Phra, Chonburi</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🛍️ Shopping & Food</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://res.cloudinary.com/pillarshotels/image/upload/f_auto/web/cms/resources/attractions/chatuchak-w1800h1360.jpg" alt="Chatuchak Market" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Chatuchak Weekend Market</div>
+                            <div class="attraction-notes">World's largest market</div>
+                            <div class="attraction-address">Kamphaeng Phet 2 Rd</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://www.56surawong.com/wp-content/uploads/sites/218/2022/01/56-Surawong-hotel-chinatown-2-2200x1200.jpg" alt="Bangkok Street Food" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Yaowarat (Chinatown)</div>
+                            <div class="attraction-notes">Night food tour</div>
+                            <div class="attraction-address">Yaowarat Rd</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chiang Mai Section -->
+            <div class="city-section">
+                <div class="city-header">
+                    <h2 class="city-title">Chiang Mai</h2>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🏯 Temples</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://mythailandtours.com/wp-content/uploads/2017/12/x-post-Wat-Chedi-Luang-temple-tour-2.jpg" alt="Chiang Mai Temples" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Wat Chedi Luang / Wat Phra Singh</div>
+                            <div class="attraction-notes">Old City temples</div>
+                            <div class="attraction-address">103 Prapokklao Rd / 2 Samlarn Rd</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/7a/f3/79.jpg" alt="Doi Suthep Temple" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Doi Suthep Temple</div>
+                            <div class="attraction-notes">Mountain-top temple with views</div>
+                            <div class="attraction-address">Doi Suthep</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🐘 Nature & Wildlife</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://i0.wp.com/mylifesamovie.com/wp-content/uploads/2019/01/Facetune_06-07-2018-04-48-54.jpg?resize=683%2C1024&ssl=1" alt="Elephant Sanctuary" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Ethical Elephant Sanctuary</div>
+                            <div class="attraction-notes">Feed & bathe elephants</div>
+                            <div class="attraction-address">119/10 Tha Phae Rd</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🎢 Adventure</h3>
+                    
+                      <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/3c/77/0f/flight-of-the-gibbon.jpg?w=800&h=-1&s=1" alt="Flight of the Gibbon" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Flight of the Gibbon</div>
+                            <div class="attraction-notes">Jungle zipline</div>
+                            <div class="attraction-address">Bang Phra area</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://i.redd.it/2huh7w6i8rt91.jpg" alt="Hot Air Balloon" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Hot Air Balloon Ride</div>
+                            <div class="attraction-notes">Romantic sunrise flight</div>
+                            <div class="attraction-address">Mae Rim District</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/c5/a9/a3/zipline.jpg?w=1100&h=-1&s=1" alt="Pong Yang Jungle Coaster" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Pong Yang Jungle Coaster & Zipline</div>
+                            <div class="attraction-notes">Zipline, coaster, tube slides</div>
+                            <div class="attraction-address">Pong Yaeng, Mae Rim District, Chiang Mai</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://skylinejungleluge.com/wp-content/uploads/2023/12/Extreme-01_0.jpg" alt="Skyline Adventure" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Skyline Adventure / Jungle Flight</div>
+                            <div class="attraction-notes">Ziplining</div>
+                            <div class="attraction-address">Doi Saket / Chiang Mai</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🍳 Experiences</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Thai Cooking Class" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Thai Cooking Class</div>
+                            <div class="attraction-notes">Learn to cook Thai dishes</div>
+                            <div class="attraction-address">Various venues</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Phuket Section -->
+            <div class="city-section">
+                <div class="city-header">
+                    <h2 class="city-title">Phuket</h2>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🏖️ Beaches</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://www.shutterstock.com/image-photo/aerial-view-kata-beach-near-260nw-2641669173.jpg" alt="Phuket Beaches" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Kata, Karon, Patong</div>
+                            <div class="attraction-notes">Patong = nightlife</div>
+                            <div class="attraction-address">West coast Phuket</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🎢 Adventure</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://static.ticket2attraction.com/gallery/19d520a2-8004-421d-81cf-aa1083afe576/55c04a59-c8c4-4b88-99d9-2292ced3fb4b-1200.webp" alt="Hanuman World Zipline" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Hanuman World Zipline</div>
+                            <div class="attraction-notes">Major zipline park</div>
+                            <div class="attraction-address">Wichit</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/c1/60/16.jpg" alt="Flying Hanuman Zipline" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Flying Hanuman / Skyline Adventure</div>
+                            <div class="attraction-notes">Zipline experiences</div>
+                            <div class="attraction-address">Kathu District</div>
+                        </div>
+                     </div>  
+
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🏝️ Island Trips</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRMrvZAWfAv4mK7PqSh1jhMPER404mtC4WfeYuaTp9oL28OtNzfmqwe1Wl7bpvmfaXMPlZD3rVfN5FVD6ysgowMQxdzteBy9yDnyIZ2nQ" alt="Phang Nga Bay" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Phang Nga Bay</div>
+                            <div class="attraction-notes">Sea kayaking + James Bond Island</div>
+                            <div class="attraction-address">Off Phuket coast</div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction">
+                        <img src="https://www.aleenta.com/wp-content/uploads/Phi-Phi-Islands-Day-Trip.jpg" alt="Phi Phi Islands" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Phi Phi / Similan Islands</div>
+                            <div class="attraction-notes">Snorkeling paradise</div>
+                            <div class="attraction-address">Off Phuket coast</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🌃 Nightlife</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://content.phuket101.net/wp-content/uploads/20210829162409/phuket-sunday-walking-street-market-930x620.jpg" alt="Phuket Old Town Market" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Phuket Old Town Market</div>
+                            <div class="attraction-notes">Street food + shops</div>
+                            <div class="attraction-address">Dibuk Road, Talat Yai</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">🏛️ Culture</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/aa/db/e8.jpg" alt="Big Buddha Phuket" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Big Buddha & Wat Chalong</div>
+                            <div class="attraction-notes">Most famous landmarks</div>
+                            <div class="attraction-address">Yot Sane 1, Chalong</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3 class="category-title">💆‍♀️ Relaxation</h3>
+                    
+                    <div class="attraction">
+                        <img src="https://www.secretocy.com/wp-content/uploads/2024/05/couples-massages.jpg" alt="Phuket Spa" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Couples Spa & Massage</div>
+                            <div class="attraction-notes">Beachside spas</div>
+                            <div class="attraction-address">Throughout Phuket</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add print functionality
+        function printGuidebook() {
+            window.print();
+        }
+        
+        // Optional: Add a print button
+        document.addEventListener('DOMContentLoaded', function() {
+            const printButton = document.createElement('button');
+            printButton.textContent = '🖨️ Print Guidebook';
+            printButton.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #667eea;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            `;
+            printButton.onclick = printGuidebook;
+            document.body.appendChild(printButton);
+        });
+    </script>
+</body>
+</html>
