@@ -148,6 +148,32 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
+        .language-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            color: #333;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px solid rgba(255,255,255,0.3);
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .language-btn:hover {
+            background: rgba(255,255,255,1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
         @media print {
             body {
                 background: white;
@@ -167,6 +193,9 @@
     </style>
 </head>
 <body>
+    <a href="index-gr.html" class="language-btn">
+        🇬🇷 Ελληνικά
+    </a>
     <div class="guidebook">
         <!-- Cover Page -->
         <div class="cover">
@@ -736,7 +765,7 @@
             printButton.textContent = '🖨️ Print Guidebook';
             printButton.style.cssText = `
                 position: fixed;
-                top: 20px;
+                top: 70px;
                 right: 20px;
                 background: #667eea;
                 color: white;
