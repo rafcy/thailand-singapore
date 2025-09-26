@@ -127,6 +127,27 @@
             display: inline-block;
         }
         
+        .travel-guide-btn {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.3);
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .travel-guide-btn:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
         @media print {
             body {
                 background: white;
@@ -151,6 +172,11 @@
         <div class="cover">
             <h1>Southeast Asia</h1>
             <p>Your Ultimate Travel Guide to Singapore, Bangkok, Chiang Mai & Phuket</p>
+            <div style="margin-top: 30px;">
+                <a href="guide.html" class="travel-guide-btn">
+                    ✈️ 12-Night Travel Guide
+                </a>
+            </div>
         </div>
         
         <div class="content">
