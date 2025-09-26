@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-Night Travel Guide - Southeast Asia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .guide {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin: 0 0 20px 0;
+            opacity: 0.9;
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.3);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .country-section {
+            margin-bottom: 50px;
+            border-left: 4px solid #667eea;
+            padding-left: 25px;
+        }
+
+        .country-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .flag {
+            font-size: 2.5em;
+            margin-right: 15px;
+        }
+
+        .country-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            color: #333;
+            margin: 0;
+        }
+
+        .nights {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 15px;
+            font-weight: 600;
+        }
+
+        .day {
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 25px;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .day-content {
+            padding: 20px 25px;
+        }
+
+        .activity {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .activity:before {
+            content: "•";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        .time {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .activity-name {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .activity-description {
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .options {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+
+        .options-title {
+            font-weight: 600;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .tips-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tip-category {
+            margin-bottom: 15px;
+        }
+
+        .tip-label {
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .guide {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .country-section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide">
+        <div class="header">
+            <h1>✈️ 12-Night Travel Guide</h1>
+            <p>Singapore → Bangkok → Chiang Mai → Phuket</p>
+            <a href="index.html" class="back-btn">← Back to Attractions</a>
+        </div>
+
+        <div class="content">
+            <!-- Singapore Section -->
+            <div class="country-section">
+                <div class="country-header">
+                    <span class="flag">🇸🇬</span>
+                    <h2 class="country-title">Singapore</h2>
+                    <span class="nights">3 Nights</span>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Arrival Evening</div>
+                    <div class="day-content">
+                        <div class="activity">Check-in, relax, and get a taste of the skyline.</div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 1 – Iconic Singapore & Night Lights</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Sunset:</span> <span class="activity-name">Marina Bay Sands SkyPark</span>
+                            <div class="activity-description">Best time: sunset to nightfall, sweeping skyline.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> <span class="activity-name">Gardens by the Bay</span>
+                            <div class="activity-description">Explore Cloud Forest & Flower Dome. Stay for Garden Rhapsody light show.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Night:</span> <span class="activity-name">Singapore River Cruise</span>
+                            <div class="activity-description">Night ride from Clarke Quay for dazzling city views.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 2 – Culture & City Explorations</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Morning:</span> <span class="activity-name">Chinatown</span>
+                            <div class="activity-description">Visit Buddha Tooth Relic Temple & Sri Mariamman Temple.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Lunch:</span> <span class="activity-name">Maxwell Food Centre</span>
+                            <div class="activity-description">Hawker center experience.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Afternoon:</span> <span class="activity-name">Little India & Kampong Glam</span>
+                            <div class="activity-description">Sultan Mosque, Arab Street, street art.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> <span class="activity-name">ION Sky & Lau Pa Sat</span>
+                            <div class="activity-description">Panoramic views, followed by dinner at historic market.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 3 – Adventure & Nature</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Morning:</span> <span class="activity-name">Nature Adventure</span>
+                            <div class="options">
+                                <div class="options-title">Choose one:</div>
+                                • TreeTop Walk (MacRitchie Reservoir)<br>
+                                • Forest Adventure (Bedok Reservoir) for zipline & outdoor fun
+                            </div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Afternoon:</span> <span class="activity-name">Sentosa Island</span>
+                            <div class="options">
+                                <div class="options-title">Pick 1–2 activities:</div>
+                                • Universal Studios (full theme park)<br>
+                                • SkyHelix Sentosa (sunset gondola ride with drinks) + Dolphin Island
+                            </div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Dinner:</span> Beachside dining at Sentosa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bangkok Section -->
+            <div class="country-section">
+                <div class="country-header">
+                    <span class="flag">🇹🇭</span>
+                    <h2 class="country-title">Bangkok</h2>
+                    <span class="nights">3 Nights</span>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Arrival Afternoon/Evening</div>
+                    <div class="day-content">
+                        <div class="activity">Check-in and explore local area.</div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 4 – Temples & Heritage</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Morning:</span> <span class="activity-name">Grand Palace & Wat Phra Kaew</span>
+                            <div class="activity-description">Emerald Buddha temple complex.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Midday:</span> <span class="activity-name">Wat Pho</span>
+                            <div class="activity-description">Reclining Buddha & traditional Thai massage nearby.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Sunset:</span> <span class="activity-name">Wat Arun</span>
+                            <div class="activity-description">Temple of Dawn at sunset.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> <span class="activity-name">Chao Phraya River Cruise</span>
+                            <div class="activity-description">Dinner cruise with romantic night city lights.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 5 – Culture & Markets</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Morning:</span> <span class="activity-name">Jim Thompson House</span>
+                            <div class="activity-description">Silk museum and traditional architecture.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Afternoon:</span> <span class="activity-name">Khlong Boat Tour</span>
+                            <div class="activity-description">Explore canals & local life.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> <span class="activity-name">Night Markets</span>
+                            <div class="options">
+                                <div class="options-title">Choose one:</div>
+                                • Yaowarat (Chinatown) food tour<br>
+                                • Chatuchak Weekend Market (if Sat/Sun)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 6 – Adventure & Nightlife</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Day:</span> <span class="activity-name">Adventure Options</span>
+                            <div class="options">
+                                <div class="options-title">Choose your adventure:</div>
+                                • Muay Thai class or live fight show<br>
+                                • ATV Off-road Adventure<br>
+                                • Flight of the Gibbon Zipline (Chonburi)
+                            </div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> <span class="activity-name">Sky Bar at Lebua State Tower</span>
+                            <div class="activity-description">Iconic rooftop cocktails with city views.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chiang Mai Section -->
+            <div class="country-section">
+                <div class="country-header">
+                    <span class="flag">🏯</span>
+                    <h2 class="country-title">Chiang Mai</h2>
+                    <span class="nights">3 Nights</span>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Arrival Morning</div>
+                    <div class="day-content">
+                        <div class="activity">Flight from Bangkok, check-in and explore.</div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 7 – Old City Temples</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Morning:</span> <span class="activity-name">Temple Tour</span>
+                            <div class="activity-description">Explore Wat Chedi Luang & Wat Phra Singh.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Afternoon:</span> <span class="activity-name">Wat Umong</span>
+                            <div class="activity-description">Forest temple with underground tunnels.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> <span class="activity-name">Night Markets</span>
+                            <div class="activity-description">Night Bazaar or Sunday Walking Street Market (if Sunday).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 8 – Nature & Adventure</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Morning:</span> <span class="activity-name">Doi Suthep Temple</span>
+                            <div class="activity-description">Panoramic views of Chiang Mai from the mountain temple.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Afternoon:</span> <span class="activity-name">Adventure Choice</span>
+                            <div class="options">
+                                <div class="options-title">Choose your experience:</div>
+                                • Ethical Elephant Sanctuary (feed & bathe elephants)<br>
+                                • Flight of the Gibbon zipline<br>
+                                • Pong Yang Jungle Coaster<br>
+                                • Skyline Adventure ziplines
+                            </div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> Relax with Thai massage or spa treatment.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 9 – Experiences & Local Life</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Morning:</span> <span class="activity-name">Hot Air Balloon Ride</span>
+                            <div class="activity-description">Optional romantic sunrise flight (book early).</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Afternoon:</span> <span class="activity-name">Thai Cooking Class</span>
+                            <div class="activity-description">Learn to prepare Northern Thai specialties.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> <span class="activity-name">Cultural Experience</span>
+                            <div class="activity-description">Lanna Folklife Museum & riverside dinner.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phuket Section -->
+            <div class="country-section">
+                <div class="country-header">
+                    <span class="flag">🏝️</span>
+                    <h2 class="country-title">Phuket</h2>
+                    <span class="nights">4 Nights</span>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Arrival Midday</div>
+                    <div class="day-content">
+                        <div class="activity">Flight from Chiang Mai, check-in and beach time.</div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 10 – Beaches & Old Town</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Day:</span> <span class="activity-name">Beach Relaxation</span>
+                            <div class="activity-description">Relax at Kata or Karon Beach.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> <span class="activity-name">Phuket Old Town Market</span>
+                            <div class="activity-description">Explore street food, colorful shophouses, night atmosphere.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 11 – Island Hopping</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Full Day:</span> <span class="activity-name">Island Tour</span>
+                            <div class="options">
+                                <div class="options-title">Choose your island adventure:</div>
+                                • Phang Nga Bay (James Bond Island, sea kayaking)<br>
+                                • Phi Phi Islands (snorkeling & turquoise waters)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 12 – Adventure & Landmarks</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Morning:</span> <span class="activity-name">Zipline Adventure</span>
+                            <div class="options">
+                                <div class="options-title">Choose your thrill:</div>
+                                • Hanuman World<br>
+                                • Flying Hanuman<br>
+                                • Erawan Seaview Zipline
+                            </div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Afternoon:</span> <span class="activity-name">Cultural Sites</span>
+                            <div class="activity-description">Visit Big Buddha & Wat Chalong.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> <span class="activity-name">Couples Spa & Massage</span>
+                            <div class="activity-description">Beachside relaxation and pampering.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 13 – Romantic Finale</div>
+                    <div class="day-content">
+                        <div class="activity">
+                            <span class="time">Morning:</span> <span class="activity-name">Leisure Time</span>
+                            <div class="activity-description">Beach time or active adventures (ATV/zipline combo).</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Afternoon:</span> <span class="activity-name">Final Exploration</span>
+                            <div class="activity-description">Relax, shop, or visit Jui Tui Shrine / Trickeye Museum.</div>
+                        </div>
+                        <div class="activity">
+                            <span class="time">Evening:</span> <span class="activity-name">Sunset Dinner Cruise</span>
+                            <div class="activity-description">Perfect final night romantic highlight.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">Day 14 – Departure</div>
+                    <div class="day-content">
+                        <div class="activity">Fly out of Phuket International Airport.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips Section -->
+            <div class="tips-section">
+                <h2 class="tips-title">🌟 Essential Travel Tips</h2>
+
+                <div class="tip-category">
+                    <span class="tip-label">Flights:</span> Singapore → Bangkok → Chiang Mai → Phuket works seamlessly (all direct flights).
+                </div>
+
+                <div class="tip-category">
+                    <span class="tip-label">Transport:</span> Use Grab (ride-hailing app) in Thailand; MRT & Grab in Singapore.
+                </div>
+
+                <div class="tip-category">
+                    <span class="tip-label">Dress Code:</span> Temples require covered shoulders/knees.
+                </div>
+
+                <div class="tip-category">
+                    <span class="tip-label">Packing:</span> Light clothes, sunblock, good walking shoes, swimwear.
+                </div>
+
+                <div class="tip-category">
+                    <span class="tip-label">Timing:</span> Start outdoor activities early morning or late afternoon to avoid heat.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
