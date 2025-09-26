@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ταξιδιωτικός Οδηγός Νοτιοανατολικής Ασίας</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .guidebook {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .cover {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 40px;
+            position: relative;
+        }
+
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .cover p {
+            font-size: 1.3em;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .city-section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+
+        .city-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 30px;
+            margin: -20px -20px 30px -20px;
+            border-radius: 10px;
+        }
+
+        .city-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .category {
+            margin-bottom: 35px;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .attraction {
+            display: flex;
+            margin-bottom: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .attraction-image {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .attraction-content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .attraction-name {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .attraction-notes {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .attraction-address {
+            font-size: 0.9em;
+            color: #777;
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .travel-guide-btn {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.3);
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .travel-guide-btn:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .language-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            color: #333;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px solid rgba(255,255,255,0.3);
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .language-btn:hover {
+            background: rgba(255,255,255,1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .guidebook {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .city-section {
+                page-break-before: always;
+            }
+            .city-section:first-child {
+                page-break-before: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="language-btn">
+        🇺🇸 English
+    </a>
+    <div class="guidebook">
+        <!-- Cover Page -->
+        <div class="cover">
+            <h1>Νοτιοανατολική Ασία</h1>
+            <p>Ο Απόλυτος Ταξιδιωτικός σας Οδηγός για Singapore, Bangkok, Chiang Mai & Phuket</p>
+            <div style="margin-top: 30px;">
+                <a href="guide-gr.html" class="travel-guide-btn">
+                    ✈️ Ταξιδιωτικός Οδηγός 12 Νυχτών
+                </a>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Singapore Section -->
+            <div class="city-section">
+                <div class="city-header">
+                    <h2 class="city-title">Singapore</h2>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🏛️ Εμβληματικά Αξιοθέατα</h3>
+
+                    <div class="attraction">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrqVMLP0awesuizBb2heBf6zyXyLGIEZiJzcKJGcGKKbel-t1TLE14fsi-o7KVBUybYRb1mzI7KT0CelxcehSMMO33ek3qc6riINCRLMISkjDrcC6mU0WinZL-DK1r8Fs0xome3=s1360-w1360-h1020-rw" alt="Gardens by the Bay" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Gardens by the Bay (Cloud Forest, Flower Dome, Supertree Grove)</div>
+                            <div class="attraction-notes">Φωτινό σόου "Garden Rhapsody" το βράδυ</div>
+                            <div class="attraction-address">18 Marina Gardens Dr, Singapore 018953</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://batamnewsasia.com/wp-content/uploads/2025/05/2764.jpg" alt="Singapore Aquarium" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">S.E.A. Aquarium</div>
+                            <div class="attraction-notes">Ένα από τα μεγαλύτερα ενυδρεία του κόσμου, πάνω από 100.000 θαλάσσια ζώα</div>
+                            <div class="attraction-address">8 Sentosa Gateway, Sentosa Island, Singapore 098269</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://resources.thomascook.in/images/holidays/sightSeeing/MarinabaySand850.jpg" alt="Marina Bay Sands" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Marina Bay Sands SkyPark</div>
+                            <div class="attraction-notes">Καλύτερα στο ηλιοβασίλεμα, θέα στον ορίζοντα</div>
+                            <div class="attraction-address">10 Bayfront Ave, Singapore 018956</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://cdn.getyourguide.com/image/format=auto,fit=contain,gravity=auto,quality=60,width=1440,height=650,dpr=1/tour_img/5b4315c448a1a.jpeg" alt="ArtScience Museum" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">ArtScience Museum</div>
+                            <div class="attraction-notes">Αρχιτεκτονική σε σχήμα λωτού, διαδραστικές εκθέσεις</div>
+                            <div class="attraction-address">6 Bayfront Ave, Singapore 018974</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Singapore_River_Stamford_Raffles_Statue.jpg" alt="Raffles Statue" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Άγαλμα του Sir Stamford Raffles</div>
+                            <div class="attraction-notes">Ιστορικό μνημείο ιδρυτή</div>
+                            <div class="attraction-address">North Bank, Singapore 179555</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://www.kulturekween.com/wp-content/uploads/2011/05/DSCF7892-scaled.jpg" alt="Sri Mariamman Temple" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Sri Mariamman Temple</div>
+                            <div class="attraction-notes">Παλαιότερος ινδουιστικός ναός, ζωντανή αρχιτεκτονική</div>
+                            <div class="attraction-address">244 South Bridge Rd, Singapore 058793</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🎢 Περιπέτεια & Διασκέδαση</h3>
+
+                    <div class="attraction">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npVOvpOh3eCj1Dj1Jx9z6tWI1_zIV9Y0tbgThl91QL735EsqMvBbra0EsyLe7G8xWGxH0jwaJ-JkZ3ZEF_n6vP5fW-kv17p5hWJXOLA8vftFhCE20_EXfx2_p3BRvqmlqA2XADN=s1360-w1360-h1020-rw" alt="Universal Studios Singapore" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Universal Studios Singapore</div>
+                            <div class="attraction-notes">Θεματικό πάρκο για ολόκληρη μέρα</div>
+                            <div class="attraction-address">8 Sentosa Gateway, Singapore 098269</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://www.sentosa.com.sg/-/media/sentosa/hero-asset/attractions/mega-adventure-park/megaadventure_hero.jpg?revision=9f8f5c2e-119b-47d8-9d19-ec48ecc5db5d" alt="Mega Adventure Park" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Mega Adventure Park (Sentosa)</div>
+                            <div class="attraction-notes">Zipline & πάρκο περιπέτειας</div>
+                            <div class="attraction-address">10A Siloso Beach Walk, Singapore 099008</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nokiw0qGJA5oX92h-7Rpl_00MOkeuTLgrMCbbAUkZbe997k-LL-MJylAuaTMQgay8V1VZPwo5DYMKrFoxgaAFPRGBpTeQLr1A7G9Y8NSlSjOfr5L18SNX1yAKZowVumgPLVxyDt=s1360-w1360-h1020-rw" alt="SkyHelix Sentosa" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">SkyHelix Sentosa</div>
+                            <div class="attraction-notes">Ανοιχτή βόλτα με γκοντόλα με ποτά στο ηλιοβασίλεμα</div>
+                            <div class="attraction-address">41 Imbiah Rd, Sentosa, Singapore 099707</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://danamic-media.danamic.org/danamic-production/2018/05/13090209/BN-FA-5.jpg.webp" alt="Forest Adventure" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Forest Adventure</div>
+                            <div class="attraction-notes">Υπαίθριο zipline & πάρκο εμποδίων πάνω από νερό</div>
+                            <div class="attraction-address">Bedok Reservoir Park, Singapore</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://cdn-imgix.headout.com/tour/34435/TOUR-IMAGE/98af8b40-252e-4981-a024-68925488556f-18026-singapore-dolphin-island---resorts-world-sentosa-05.jpg" alt="Dolphin Island Sentosa" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Dolphin Island (Sentosa)</div>
+                            <div class="attraction-notes">Κολύμπι & αλληλεπίδραση με δελφίνια Ινδο-Ειρηνικού</div>
+                            <div class="attraction-address">8 Sentosa Gateway, Singapore 098269</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🏮 Πολιτισμός</h3>
+
+                    <div class="attraction">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4np31O-Co0RJhtlUd2xv53G2Y5eyY-VMBckraYhyY38Tcxwn_b5ifQwuouva5LDnYHGUvyGci84ucKf9xZoRmF-nN653C8piXWsGk1OJ2mz3JMSNP1W2rFWnz8yY8_iY4EvzA1pKFw=w594-h343-n-k-no" alt="Chinatown Singapore" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Chinatown</div>
+                            <div class="attraction-notes">Buddha Tooth Relic Temple, δρόμινες αγορές</div>
+                            <div class="attraction-address">Pagoda St area</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSuThQ4p7ajbH1LjB9RCwT7Yxf1_nn8zs5kBT3VjhbE98clPw5L_OxRTl0cv4no-Aa7IentX71kACHks3SfL8-jSJonhdLm5d8jWKmtqg" alt="Little India Singapore" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Little India</div>
+                            <div class="attraction-notes">Sri Veeramakaliamman Temple, πολύχρωμοι δρόμοι</div>
+                            <div class="attraction-address">Serangoon Rd</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRRZub8eExDyZNz0T-dEQ_S9tKCRoyFT6nEAD-bK8O-y7IZkciZeEs0FJrb0YDTTCWgVrdxo0giPrfP7DRZKGcAGIWF0v8X8JwMpI2Bjg" alt="Kampong Glam" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Kampong Glam</div>
+                            <div class="attraction-notes">Sultan Mosque, Arab Street</div>
+                            <div class="attraction-address">Arab Street area</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🍜 Φαγητό</h3>
+
+                    <div class="attraction">
+                        <img src="https://expatliving.sg/wp-content/uploads/2022/10/Lau-pa-sat-clock-now.jpg" alt="Hawker Center" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Maxwell Food Centre, Lau Pa Sat</div>
+                            <div class="attraction-notes">Διάσημα κέντρα hawker</div>
+                            <div class="attraction-address">1 Kadayanallur St; 18 Raffles Quay</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🏛️ Ιστορική Αρχιτεκτονική</h3>
+
+                    <div class="attraction">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Lau_Pa_Sat_Festival_Market.jpg/800px-Lau_Pa_Sat_Festival_Market.jpg" alt="Lau Pa Sat" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Lau Pa Sat (Telok Ayer Market)</div>
+                            <div class="attraction-notes">Ιστορική αγορά από χυτοσίδηρο, μοναδική αρχιτεκτονική</div>
+                            <div class="attraction-address">18 Raffles Quay, Singapore 048582</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bangkok Section -->
+            <div class="city-section">
+                <div class="city-header">
+                    <h2 class="city-title">Bangkok</h2>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🏯 Ναοί & Ιστορία</h3>
+
+                    <div class="attraction">
+                        <img src="https://cdn.getyourguide.com/image/format=auto,fit=contain,gravity=auto,quality=60,width=1440,height=650,dpr=1/tour_img/fcf83fa642bdc0abe65dac1a2671b2fdefdbbcb957a64678e03f8c8d12fb37dc.png" alt="Grand Palace Bangkok" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Grand Palace & Wat Phra Kaew</div>
+                            <div class="attraction-notes">Σμαραγδένιος Βούδας</div>
+                            <div class="attraction-address">Na Phra Lan Rd</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrrzp8iaJLfj-zvbd51O3B93Wq9gaVZJcPm1yfnrypShEMd9hA0Wxw70E5UaBajdznxsoMTHQBQ96YOd1ahmdkwM3RJ09jD4Z6ZJIfXlIcvlLKBRbdhLWzjH22xUbQOyhh4_j2S-Q=s1360-w1360-h1020-rw" alt="Wat Pho Bangkok" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Wat Pho</div>
+                            <div class="attraction-notes">Ξαπλωμένος Βούδας + ταϊλανδέζικο μασάζ κοντά</div>
+                            <div class="attraction-address">2 Sanamchai Rd</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://static.wixstatic.com/media/2cc94a_07e55de318fe41538e17cb9de596cb45~mv2.jpg/v1/fill/w_2500,h_1406,al_c/2cc94a_07e55de318fe41538e17cb9de596cb45~mv2.jpg" alt="Wat Arun Bangkok" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Wat Arun</div>
+                            <div class="attraction-notes">Ναός της Αυγής, εκπληκτικό σημείο για ηλιοβασίλεμα</div>
+                            <div class="attraction-address">158 Thanon Wang Doem</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://res.cloudinary.com/pillarshotels/image/upload/f_auto/web/cms/resources/attractions/erawan-shrin-w1800h1360.jpg" alt="Erawan Shrine" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Erawan Shrine</div>
+                            <div class="attraction-notes">Σεβαστό ινδουιστικό ιερό, ζωντανά τελετουργικά</div>
+                            <div class="attraction-address">Ratchadamri Rd, Lumphini, Bangkok</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/010-Democracy_Monument.jpg" alt="Democracy Monument" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Democracy Monument</div>
+                            <div class="attraction-notes">Μεγαλοπρεπές ιστορικό ορόσημο, συμβολικό σημείο</div>
+                            <div class="attraction-address">Ratchadamnoen Ave, Bangkok</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🎭 Πολιτισμός & Διασκέδαση</h3>
+
+                    <div class="attraction">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Main_House_of_Jim_Thompson_photo_D_Ramey_Logan.jpg" alt="Jim Thompson House" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Jim Thompson House</div>
+                            <div class="attraction-notes">Μουσείο μεταξιού, παραδοσιακή αρχιτεκτονική</div>
+                            <div class="attraction-address">6 Kasem San 2 Alley</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/4c/84/c5/caption.jpg?w=1200&h=-1&s=1" alt="Bangkok Canal Tour" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Khlong Boat Tour</div>
+                            <div class="attraction-notes">Εξερεύνηση καναλιών</div>
+                            <div class="attraction-address">Διάφορα λιμανάκια</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://cdn.evolve-mma.com/wp-content/uploads/2022/02/The-Complete-Muay-Thai-Beginners-Guide.jpg" alt="Muay Thai" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Μάθημα ή Σόου Muay Thai</div>
+                            <div class="attraction-notes">Δοκιμάστε ένα μάθημα ή παρακολουθήστε αγώνα</div>
+                            <div class="attraction-address">Διάφορα γυμναστήρια</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/df/2a/09.jpg" alt="Siam Ocean World" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Siam Ocean World (SEA LIFE Bangkok)</div>
+                            <div class="attraction-notes">Ενυδρείο με κολύμπι πίσω από το γυαλί, διαδραστικές θαλάσσιες εμπειρίες</div>
+                            <div class="attraction-address">B1-B2, Siam Paragon, Bangkok 10330</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🎢 Περιπέτεια</h3>
+
+                    <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/b8/f6/74/caption.jpg?w=1200&h=-1&s=1" alt="Bangkok ATV" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Bangkok ATV Adventures</div>
+                            <div class="attraction-notes">Περιπέτεια εκτός δρόμου</div>
+                            <div class="attraction-address">Phu Yai Samruai Alley, Rat Burana, Bangkok</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Jungle Zipline" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Jungle Zipline (Flight of the Gibbon)</div>
+                            <div class="attraction-notes">Ολοήμερο ταξίδι με zipline</div>
+                            <div class="attraction-address">Bang Phra, Chonburi</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🛍️ Αγορές & Φαγητό</h3>
+
+                    <div class="attraction">
+                        <img src="https://res.cloudinary.com/pillarshotels/image/upload/f_auto/web/cms/resources/attractions/chatuchak-w1800h1360.jpg" alt="Chatuchak Market" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Chatuchak Weekend Market</div>
+                            <div class="attraction-notes">Η μεγαλύτερη αγορά του κόσμου</div>
+                            <div class="attraction-address">Kamphaeng Phet 2 Rd</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://www.56surawong.com/wp-content/uploads/sites/218/2022/01/56-Surawong-hotel-chinatown-2-2200x1200.jpg" alt="Bangkok Street Food" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Yaowarat (Chinatown)</div>
+                            <div class="attraction-notes">Νυχτερινή περιήγηση φαγητού</div>
+                            <div class="attraction-address">Yaowarat Rd</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chiang Mai Section -->
+            <div class="city-section">
+                <div class="city-header">
+                    <h2 class="city-title">Chiang Mai</h2>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🏯 Ναοί</h3>
+
+                    <div class="attraction">
+                        <img src="https://mythailandtours.com/wp-content/uploads/2017/12/x-post-Wat-Chedi-Luang-temple-tour-2.jpg" alt="Chiang Mai Temples" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Wat Chedi Luang / Wat Phra Singh</div>
+                            <div class="attraction-notes">Ναοί της παλιάς πόλης</div>
+                            <div class="attraction-address">103 Prapokklao Rd / 2 Samlarn Rd</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/7a/f3/79.jpg" alt="Doi Suthep Temple" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Doi Suthep Temple</div>
+                            <div class="attraction-notes">Ναός στην κορυφή του βουνού με θέα</div>
+                            <div class="attraction-address">Doi Suthep</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/fb/e7/51/caption.jpg?w=800&h=400&s=1" alt="Wat Umong" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Wat Umong</div>
+                            <div class="attraction-notes">Αρχαίος ναός δάσους, σήραγγες, ηρεμία</div>
+                            <div class="attraction-address">Suthep Rd, Chiang Mai</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🐘 Φύση & Άγρια Ζωή</h3>
+
+                    <div class="attraction">
+                        <img src="https://i0.wp.com/mylifesamovie.com/wp-content/uploads/2019/01/Facetune_06-07-2018-04-48-54.jpg?resize=683%2C1024&ssl=1" alt="Elephant Sanctuary" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Ηθικό Καταφύγιο Ελεφάντων</div>
+                            <div class="attraction-notes">Ταΐστε & λουστείτε ελέφαντες</div>
+                            <div class="attraction-address">119/10 Tha Phae Rd</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🎢 Περιπέτεια</h3>
+
+                    <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/3c/77/0f/flight-of-the-gibbon.jpg?w=800&h=-1&s=1" alt="Flight of the Gibbon" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Flight of the Gibbon</div>
+                            <div class="attraction-notes">Zipline στη ζούγκλα</div>
+                            <div class="attraction-address">Bang Phra area</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://i.redd.it/2huh7w6i8rt91.jpg" alt="Hot Air Balloon" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Βόλτα με Αερόστατο</div>
+                            <div class="attraction-notes">Ρομαντική πτήση στην ανατολή</div>
+                            <div class="attraction-address">Mae Rim District</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/c5/a9/a3/zipline.jpg?w=1100&h=-1&s=1" alt="Pong Yang Jungle Coaster" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Pong Yang Jungle Coaster & Zipline</div>
+                            <div class="attraction-notes">Zipline, roller coaster, τσουλήθρες σωλήνων</div>
+                            <div class="attraction-address">Pong Yaeng, Mae Rim District, Chiang Mai</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://skylinejungleluge.com/wp-content/uploads/2023/12/Extreme-01_0.jpg" alt="Skyline Adventure" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Skyline Adventure / Jungle Flight</div>
+                            <div class="attraction-notes">Ziplining</div>
+                            <div class="attraction-address">Doi Saket / Chiang Mai</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🍳 Εμπειρίες</h3>
+
+                    <div class="attraction">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Thai Cooking Class" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Μάθημα Ταϊλανδέζικης Μαγειρικής</div>
+                            <div class="attraction-notes">Μάθετε να μαγειρεύετε ταϊλανδέζικα πιάτα</div>
+                            <div class="attraction-address">Διάφοροι χώροι</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/b1/b3/10/lanna-folklife-museum.jpg?w=900&h=500&s=1" alt="Lanna Folklife Museum" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Lanna Folklife Museum</div>
+                            <div class="attraction-notes">Ιστορικό αποικιακό κτίριο, πολιτιστικές εκθέσεις</div>
+                            <div class="attraction-address">Prapokklao Rd, Chiang Mai 50200</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phuket Section -->
+            <div class="city-section">
+                <div class="city-header">
+                    <h2 class="city-title">Phuket</h2>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🏖️ Παραλίες</h3>
+
+                    <div class="attraction">
+                        <img src="https://www.shutterstock.com/image-photo/aerial-view-kata-beach-near-260nw-2641669173.jpg" alt="Phuket Beaches" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Kata, Karon, Patong</div>
+                            <div class="attraction-notes">Patong = νυχτερινή διασκέδαση</div>
+                            <div class="attraction-address">West coast Phuket</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🎢 Περιπέτεια</h3>
+
+                    <div class="attraction">
+                        <img src="https://static.ticket2attraction.com/gallery/19d520a2-8004-421d-81cf-aa1083afe576/55c04a59-c8c4-4b88-99d9-2292ced3fb4b-1200.webp" alt="Hanuman World Zipline" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Hanuman World Zipline</div>
+                            <div class="attraction-notes">Μεγάλο πάρκο zipline</div>
+                            <div class="attraction-address">Wichit</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/c1/60/16.jpg" alt="Flying Hanuman Zipline" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Flying Hanuman / Skyline Adventure</div>
+                            <div class="attraction-notes">Εμπειρίες Zipline</div>
+                            <div class="attraction-address">Kathu District</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🏝️ Νησιωτικά Ταξίδια</h3>
+
+                    <div class="attraction">
+                        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRMrvZAWfAv4mK7PqSh1jhMPER404mtC4WfeYuaTp9oL28OtNzfmqwe1Wl7bpvmfaXMPlZD3rVfN5FVD6ysgowMQxdzteBy9yDnyIZ2nQ" alt="Phang Nga Bay" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Phang Nga Bay</div>
+                            <div class="attraction-notes">Θαλάσσιο kayaking + James Bond Island</div>
+                            <div class="attraction-address">Ανοικτά της ακτής Phuket</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://www.aleenta.com/wp-content/uploads/Phi-Phi-Islands-Day-Trip.jpg" alt="Phi Phi Islands" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Phi Phi / Similan Islands</div>
+                            <div class="attraction-notes">Παράδεισος για snorkeling</div>
+                            <div class="attraction-address">Ανοικτά της ακτής Phuket</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🌃 Νυχτερινή Διασκέδαση</h3>
+
+                    <div class="attraction">
+                        <img src="https://content.phuket101.net/wp-content/uploads/20210829162409/phuket-sunday-walking-street-market-930x620.jpg" alt="Phuket Old Town Market" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Phuket Old Town Market</div>
+                            <div class="attraction-notes">Φαγητό δρόμου + καταστήματα</div>
+                            <div class="attraction-address">Dibuk Road, Talat Yai</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">🏛️ Πολιτισμός</h3>
+
+                    <div class="attraction">
+                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/aa/db/e8.jpg" alt="Big Buddha Phuket" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Big Buddha & Wat Chalong</div>
+                            <div class="attraction-notes">Τα πιο διάσημα αξιοθέατα</div>
+                            <div class="attraction-address">Yot Sane 1, Chalong</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/9a/94/4b.jpg?w=3840" alt="Phuket Trickeye Museum" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Phuket Trickeye Museum</div>
+                            <div class="attraction-notes">Διαδραστικό μουσείο 3D τέχνης, διασκέδαση με φωτογραφίες</div>
+                            <div class="attraction-address">130/1 Phang Nga Rd, Phuket</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://www.diamondcliff.com/wp-content/uploads/2024/11/diamondcliff-article-2-2.jpg" alt="Jui Tui Shrine" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Jui Tui Shrine</div>
+                            <div class="attraction-notes">Πολύχρωμος κινεζικός ναός, ετήσιο φεστιβάλ</div>
+                            <div class="attraction-address">25 Soi Angkarn, Phuket</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">💆‍♀️ Χαλάρωση</h3>
+
+                    <div class="attraction">
+                        <img src="https://www.secretocy.com/wp-content/uploads/2024/05/couples-massages.jpg" alt="Phuket Spa" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Spa & Μασάζ για Ζευγάρια</div>
+                            <div class="attraction-notes">Spa στην παραλία</div>
+                            <div class="attraction-address">Σε όλο το Phuket</div>
+                        </div>
+                    </div>
+
+                    <div class="attraction">
+                        <img src="https://viagotour.com/include_designs/photoalbum/phuket/dolphins_bay_phuket/dolphins_bay_phuket_01-4.jpg" alt="Dolphins Bay Phuket" class="attraction-image">
+                        <div class="attraction-content">
+                            <div class="attraction-name">Dolphins Bay Phuket</div>
+                            <div class="attraction-notes">Πρόγραμμα κολύμβησης και αλληλεπίδρασης, σόου με δελφίνια</div>
+                            <div class="attraction-address">33/50 Chaofa Rd, Chalong, Phuket</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Προσθήκη λειτουργίας εκτύπωσης
+        function printGuidebook() {
+            window.print();
+        }
+
+        // Προσθήκη κουμπιού εκτύπωσης
+        document.addEventListener('DOMContentLoaded', function() {
+            const printButton = document.createElement('button');
+            printButton.textContent = '🖨️ Εκτύπωση Οδηγού';
+            printButton.style.cssText = `
+                position: fixed;
+                top: 70px;
+                right: 20px;
+                background: #667eea;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            `;
+            printButton.onclick = printGuidebook;
+            document.body.appendChild(printButton);
+        });
+    </script>
+</body>
+</html>
